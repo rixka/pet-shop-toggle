@@ -75,5 +75,12 @@
     "adopted": false,
     "age": 6,
     "description": "This fierce, but often seen creature is a type of bird. It's about the size of a peacock, has two huge wings, two thin, long legs and a short tail."
+  },
+  {
+    "animal": "crocodile",
+    "name": "Benny",
+    "adopted": false,
+    "age": 1,
+    "description": "This adorable, but common creature is a type of reptile. It's about the size of a chameleon, has no legs or arms, like a snake and a long, weak tail."
   }
 ]
