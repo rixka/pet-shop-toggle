@@ -63,10 +63,10 @@
     "description": "This curious, but often seen creature is a type of fish. It's about the size of a manta ray, has two huge side fins, a short, streamlined dorsal fin and a huge, powerful tail and small anal fin."
   },
   {
-    "artist": "cat",
-    "title": "Roomba",
-    "difficulty": false,
-    "level": 7,
+    "animal": "cat",
+    "name": "Roomba",
+    "adopted": false,
+    "age": 7,
     "description": "These creatures are quite nervous and they get very territorial. It's about the size of a king crab, has two clawed arms, four legs and a huge, powerful tail."
   },
   {

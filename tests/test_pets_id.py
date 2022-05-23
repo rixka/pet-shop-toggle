@@ -23,7 +23,7 @@ pet_id = str(db.pets.find_one()['_id'])
 
 def test_pets_id():
     res = api.test_client().get(
-        ''.join(['/pets', pet_id])
+        '/'.join(['/pets', pet_id])
     )
 
     assert res.status_code == 200

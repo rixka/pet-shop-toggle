@@ -17,10 +17,15 @@ DATA = {
 }
 
 db = MongoClient('localhost', 27017).development
+pet = db.pets.find_one()
+pet_id = str(pet['_id'])
+
 
 def test_adopt_pet():
-    pet = db.pets.find_one()
-    pet_id = str(pet['_id'])
+    db.pets.update_one(
+        { '_id': pet['_id'] },
+        { '$set': { 'adopted': False }}
+    )
 
     res = api.test_client().post(
         '/'.join(['/pets', pet_id, 'adopt']),
@@ -31,35 +36,39 @@ def test_adopt_pet():
     assert res.status_code == 201
     assert res.mimetype == JSON_MIME_TYPE
     assert res.json == { 'message': 'The item was created successfully' }
-    assert res.headers.get('Location') is not None
 
-    pet = db.pets.find_one({ '_id': pet_id })
-    assert pet['adopt'] == True
+    updated_pet = db.pets.find_one({ '_id': pet['_id'] })
+    assert pet['adopted'] == True
 
-    res_adopt = db.adopt.find_one(DATA)
-    assert res_adopt.json == DATA
+    res_adopt = db.adoptions.find_one(DATA)
+    assert res_adopt['address'] == DATA['address']
+    assert res_adopt['name'] == DATA['name']
 
-def test_adopt_bad_path():
+def test_adopt_failed():
+    pet = db.pets.find_one()
+    pet_id = str(pet['_id'])
+
+    db.pets.update_one(
+        { '_id': pet['_id'] },
+        { '$set': { 'adopted': True }}
+    )
+
     res = api.test_client().post(
-        '/pets/adopt',
+        '/'.join(['/pets', pet_id, 'adopt']),
         data=dumps(DATA),
         headers=HEADERS
     )
 
-    assert res.status_code == 404
+    assert res.status_code == 409
     assert res.mimetype == JSON_MIME_TYPE
-    assert res.json == { 'error': 'Not Found' }
+    assert res.json == {'error': 'Conflict: Pet already adopted'}
 
-def test_adopt_no_id():
-    res = api.test_client().post(
-        '/pets//adopt',
-        data=dumps(DATA),
-        headers=HEADERS    
-    )
+    pet = db.pets.find_one({ '_id': pet['_id'] })
+    assert pet['adopted'] == True
 
-    assert res.status_code == 400
-    assert res.mimetype == JSON_MIME_TYPE
-    assert res.json == { 'error': 'Bad Request' }
+    res_adopt = db.adoptions.find_one(DATA)
+    assert res_adopt['address'] == DATA['address']
+    assert res_adopt['name'] == DATA['name']
 
 def test_adopt_bad_id():
     res = api.test_client().post(

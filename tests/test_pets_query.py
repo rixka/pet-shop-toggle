@@ -25,7 +25,7 @@ def test_list():
 
     assert res.status_code == 200
     assert validate(res.json['data'], SCHEMA) is None
-    assert len(res.json['data']) == 5
+    assert len(res.json['data']) == 12
 
 def test_list_filter_dog():
     res = api.test_client().get('/pets?animal=dog')
@@ -33,7 +33,7 @@ def test_list_filter_dog():
     assert res.status_code == 200
     assert res.mimetype == JSON_MIME_TYPE
     assert validate(res.json['data'], SCHEMA) is None
-    assert len(res.json) == 3
+    assert len(res.json['data']) == 3
 
 def test_list_bad_filter():
     res = api.test_client().get('/pets?breed=poodle')
