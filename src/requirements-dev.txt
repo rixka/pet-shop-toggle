@@ -1,0 +1,5 @@
+pytest==7.1.2
+pymongo==4.1.1
+pytest-flask==1.2.0
+Flask==2.1.
+jsonschema==4.5.1
