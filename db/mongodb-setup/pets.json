@@ -1,0 +1,79 @@
+[
+  {
+    "animal": "dog",
+    "name": "Lycan",
+    "adopted": false,
+    "age": 1,
+    "description": "This amazing, but fairly common creature is a type of mammal. It's about the size of a rhino, has two legs and four arms and a long, curling tail."
+  },
+  {
+    "animal": "dog",
+    "name": "Gromit",
+    "adopted": true,
+    "age": 9,
+    "description": "They have a thick, rough skin covered in thin, coarse hairs which is usually either silver, light bronze or light pink or a combination of these colors."
+  },
+  {
+    "animal": "cat",
+    "name": "Ruckus",
+    "adopted": true,
+    "age": 3,
+    "description": "They have a soft, delicate skin covered in small, coarse scales, which is usually either light gold, light purple or dark purple or a combination of these colors."
+  },
+  {
+    "animal": "rabbit",
+    "name": "Titan",
+    "adopted": false,
+    "age": 4,
+    "description": "They're nocturnal and rely on their sight and extra sense to get around. They do have enormous noses, but their sense of smell is a bit poor."
+  },
+  {
+    "animal": "dog",
+    "name": "Snoopy",
+    "adopted": false,
+    "age": 1,
+    "description": "They live in mountainous areas and are relatively common. They're omnivores and their large, wide mouths, their teeth and narrow tongue are ideal for eating smaller creatures."
+  },
+  {
+    "animal": "cat",
+    "name": "Opa",
+    "adopted": false,
+    "age": 5,
+    "description": "They have wide noses and small, standing ears. Their heads are fairly small in comparison to their bodies."
+  },
+  {
+    "animal": "turtle",
+    "name": "Captain Swishy",
+    "adopted": false,
+    "age": 3,
+    "description": "These creatures are very calm, but they get very territorial. They mate once every nine to ten months and they mate and bond with one or two partners throughout life. Which, with their unfortunately short lifespans, isn't too surprising."
+  },
+  {
+    "animal": "cat",
+    "name": "Alabama",
+    "adopted": false,
+    "age": 6,
+    "description": "They make sounds ranging from very high pitched to relatively high pitched and have a extremely limited range of sounds they make to indicate discoveries, dangers and otherwise communicate with each other."
+  },
+  {
+    "animal": "fish",
+    "name": "Vivaldi",
+    "adopted": true,
+    "age": 1,
+    "description": "This curious, but often seen creature is a type of fish. It's about the size of a manta ray, has two huge side fins, a short, streamlined dorsal fin and a huge, powerful tail and small anal fin."
+  },
+  {
+    "artist": "cat",
+    "title": "Roomba",
+    "difficulty": false,
+    "level": 7,
+    "description": "These creatures are quite nervous and they get very territorial. It's about the size of a king crab, has two clawed arms, four legs and a huge, powerful tail."
+  },
+  {
+    "animal": "bird",
+    "name": "Ronald",
+    "adopted": false,
+    "age": 6,
+    "description": "This fierce, but often seen creature is a type of bird. It's about the size of a peacock, has two huge wings, two thin, long legs and a short tail."
+  }
+]
