@@ -3,6 +3,7 @@ from bson.objectid import ObjectId
 from flask import make_response, request, abort
 
 JSON_MIME_TYPE = 'application/json'
+SUPPORTED_FIELDS = ['animal', 'name', 'age', 'adopted' ]
 
 
 def json_response(data='', status=200, headers=None):
@@ -17,11 +18,3 @@ def validate_object_id(_id):
         return ObjectId(_id)
     else:
         abort(400)
-
-def parse_query(param):
-    target = dict(request.args).get(param)
-    return target[0] if target else None
-
-def check_not_empty(r):
-    if r == []: abort(404)
-    
