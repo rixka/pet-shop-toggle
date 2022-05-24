@@ -34,5 +34,8 @@ class Toggler:
         ldclient.set_config(Config(SDK_KEY))
         self.client = ldclient.get()
 
+    def check_db_flag(self):
+        return self.client.variation('swap-database', {"key": "user@test.com"}, False)
+
     def check_flag(self, key):
         return self.client.variation(key, {"key": "user@test.com"}, False)

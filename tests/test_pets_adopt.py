@@ -2,7 +2,6 @@ from app import api
 from utils import JSON_MIME_TYPE
 
 from bson.json_util import dumps
-from jsonschema import validate
 from pymongo import MongoClient
 
 

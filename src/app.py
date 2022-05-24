@@ -11,7 +11,7 @@ api = Flask(__name__)
 toggler = Toggler()
 
 MONGO_HOST = os.environ.get('MONGO_HOST') or 'localhost'
-MONGO_DB = toggler.check_flag('swap-database') # values: development/staging
+MONGO_DB = toggler.check_db_flag() or 'development' # values: development/staging
 
 db = MongoClient(MONGO_HOST, 27017)[MONGO_DB]
 
