@@ -21,6 +21,7 @@ def validate_object_id(_id):
     else:
         abort(400)
 
+# Best to do a better DB handler
 def validate_pet_exists(db, _id):
     res = db.pets.find_one({
         '_id': validate_object_id(_id)
@@ -33,6 +34,9 @@ class Toggler:
         SDK_KEY = '' # TODO: UPDATE YOUR SDK KEY
         ldclient.set_config(Config(SDK_KEY))
         self.client = ldclient.get()
+
+    def check_log_level(self):
+        return self.client.variation('log-level', {"key": "user@test.com"}, False)
 
     def check_db_flag(self):
         return self.client.variation('swap-database', {"key": "user@test.com"}, False)
